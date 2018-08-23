@@ -232,6 +232,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
+        'Shinobi' => Caffeinated\Shinobi\Facades\Shinobi::class,
+
     ],
 
 ];
