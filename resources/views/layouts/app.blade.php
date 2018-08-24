@@ -86,6 +86,8 @@
                 </div>
             </div>
         </nav>
+        
+        @include('partials.info')
 
         @yield('content')
     </div>

@@ -10,7 +10,7 @@
                     @can('products.create')
                         <a 
                             href="{{ route('products.create')}}"
-                            class="btn btn-primary pull-right"
+                            class="btn btn-sm btn-primary pull-right"
                         >
                         Crear
                         </a>
@@ -35,7 +35,7 @@
                                     @can('products.show')
                                         <a 
                                             href="{{ route('products.show',$product->id)}}"
-                                            class="btn btn-default"
+                                            class="btn btn-sm btn-default"
                                         >
                                             Ver
                                         </a>                                        
@@ -45,7 +45,7 @@
                                     @can('products.edit')
                                         <a 
                                             href="{{ route('products.edit',$product->id)}}"
-                                            class="btn btn-primary"
+                                            class="btn btn-sm btn-primary"
                                         >
                                             Eeditar
                                         </a>                                        
@@ -57,7 +57,7 @@
                                         ]) 
                                     !!}
 
-                                        <button class="btn btn-danger">Eliminar</button>
+                                        <button class="btn btn-sm btn-danger">Eliminar</button>
 
                                     {!! Form::close() !!}
                                 </td>
