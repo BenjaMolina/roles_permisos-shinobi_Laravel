@@ -54,16 +54,16 @@ Route::middleware(['auth'])->group(function(){
     Route::get('products','ProductController@index')->name('products.index')
         ->middleware('permission:products.index'); 
         
-    Route::get('products/{role}','ProductController@show')->name('products.show')
+    Route::get('products/{product}','ProductController@show')->name('products.show')
         ->middleware('permission:products.show'); 
 
-    Route::delete('products/{role}','ProductController@destroy')->name('products.destroy')
+    Route::delete('products/{product}','ProductController@destroy')->name('products.destroy')
         ->middleware('permission:products.destroy'); 
 
-    Route::get('products/{role}/edit','ProductController@edit')->name('products.edit')
+    Route::get('products/{product}/edit','ProductController@edit')->name('products.edit')
         ->middleware('permission:products.edit'); 
 
-    Route::put('products/{role}','ProductController@update')->name('products.update')
+    Route::put('products/{product}','ProductController@update')->name('products.update')
         ->middleware('permission:products.edit'); 
 
 
