@@ -51,15 +51,16 @@
                                         </a>                                        
                                     @endcan
                                 </td>
-                                <td>
-                                    {!! Form::open([
-                                            'route' => ['products.destroy',$product->id], 'method'=>'DELETE'
-                                        ]) 
-                                    !!}
+                                    @can('products.destroy')
+                                        {!! Form::open([
+                                                'route' => ['products.destroy',$product->id], 'method'=>'DELETE'
+                                            ]) 
+                                        !!}
 
-                                        <button class="btn btn-sm btn-danger">Eliminar</button>
+                                            <button class="btn btn-sm btn-danger">Eliminar</button>
 
-                                    {!! Form::close() !!}
+                                        {!! Form::close() !!}
+                                    @endcan
                                 </td>
                             </tr>
                             @endforeach

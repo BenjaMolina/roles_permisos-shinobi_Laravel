@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                     {!! Form::open([
-                          'route'=>['roles.create'],
+                          'route'=>['roles.store'],
                         ])
                     !!}
                         @include('roles.partials.form')

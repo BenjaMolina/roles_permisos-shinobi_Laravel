@@ -52,6 +52,7 @@
                                     @endcan
                                 </td>
                                 <td width="10px">
+                                     @can('roles.destroy')
                                     {!! Form::open([
                                             'route' => ['roles.destroy',$role->id], 'method'=>'DELETE'
                                         ]) 
@@ -60,6 +61,7 @@
                                         <button class="btn btn-sm btn-danger">Eliminar</button>
 
                                     {!! Form::close() !!}
+                                    @endcan
                                 </td>
                             </tr>
                             @endforeach

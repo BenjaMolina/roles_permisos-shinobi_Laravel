@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                     {!! Form::open([
-                          'route'=>['products.create'],
+                          'route'=>['products.store'],
                         ])
                     !!}
                         @include('products.partials.form')
