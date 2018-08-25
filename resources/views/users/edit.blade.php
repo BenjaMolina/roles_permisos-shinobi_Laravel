@@ -11,13 +11,13 @@
 
                 <div class="panel-body">
                     {!! Form::model(
-                            $product,
-                            [ 'route'=>['products.update',$product->id],
+                            $user,
+                            [ 'route'=>['users.update',$user->id],
                                'method' => 'PUT'
                             ]
                         )
                     !!}
-                        @include('products.partials.form')
+                        @include('users.partials.form')
 
                     {!! Form::close()!!}
                 </div>
