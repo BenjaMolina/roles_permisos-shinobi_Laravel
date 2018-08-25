@@ -54,10 +54,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        // dd($request->all());
+       // 1.- Actualizar usaurio
         $user->update($request->all());
+
+        //2.- Actualizar rol
+        $user->roles()->sync($request->get('roles'));
         
         return redirect()->route('users.edit',$user->id)
-                    ->with('info','Usuario editado exitosamente');
+                    ->with('info','Usuario Actualizado exitosamente');
     }
 
     /**
