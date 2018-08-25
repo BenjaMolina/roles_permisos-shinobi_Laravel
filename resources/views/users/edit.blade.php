@@ -10,16 +10,16 @@
                 </div>
 
                 <div class="panel-body">
-                    {!! Form::model(
+                    {{ Form::model(
                             $user,
                             [ 'route'=>['users.update',$user->id],
                                'method' => 'PUT'
                             ]
                         )
-                    !!}
+                    }}
                         @include('users.partials.form')
 
-                    {!! Form::close()!!}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

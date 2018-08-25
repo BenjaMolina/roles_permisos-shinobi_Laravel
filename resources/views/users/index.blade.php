@@ -44,14 +44,14 @@
                                     @endcan
                                 </td>
                                 <td>
-                                    {!! Form::open([
+                                    {{ Form::open([
                                             'route' => ['users.destroy',$user->id], 'method'=>'DELETE'
                                         ]) 
-                                    !!}
+                                    }}
 
                                         <button class="btn btn-sm btn-danger">Eliminar</button>
 
-                                    {!! Form::close() !!}
+                                    {{ Form::close() }}
                                 </td>
                             </tr>
                             @endforeach
