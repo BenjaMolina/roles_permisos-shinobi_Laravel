@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
+use Caffeinated\Shinobi\Models\Role;
+use Caffeinated\Shinobi\Models\Permission;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -14,7 +15,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::paginate();
+
+        return view('roles.index',compact('roles'));
+
     }
 
     /**
@@ -24,7 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -35,7 +39,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = Role::create($request->all());
+
+        return redirect()->route('roles.edit',$role->id)
+                    ->with('info','Role creado exitosamente');
     }
 
     /**
@@ -46,7 +53,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('roles.show',compact('role'));
     }
 
     /**
@@ -57,7 +64,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view('roles.edit',compact('role'));
     }
 
     /**
@@ -69,7 +76,10 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $role->update($request->all());
+
+        return redirect()->route('roles.edit',$role->id)
+                    ->with('info','Rol editado con exito');
     }
 
     /**
@@ -80,6 +90,8 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+
+        return back()->with('info','Role eliminado con exito');
     }
 }
