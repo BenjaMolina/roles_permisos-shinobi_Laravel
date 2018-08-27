@@ -51,6 +51,7 @@
                                         </a>                                        
                                     @endcan
                                 </td>
+                                <td>
                                     @can('products.destroy')
                                         {!! Form::open([
                                                 'route' => ['products.destroy',$product->id], 'method'=>'DELETE'

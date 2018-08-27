@@ -8,6 +8,20 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('permission:roles.index'); //'permission' hace referencia al nombre del middleware dado de alta en App\Http\Kernel.php en el array $routeMiddleware
+
+        $this->middleware('permission:roles.create')->only(['create','store']); 
+                    
+        $this->middleware('permission:roles.show')->only('show'); 
+
+        $this->middleware('permission:roles.destroy')->only('destroy'); 
+
+        $this->middleware('permission:roles.edit')->only(['edit','update']); 
+    }
+
     /**
      * Display a listing of the resource.
      *

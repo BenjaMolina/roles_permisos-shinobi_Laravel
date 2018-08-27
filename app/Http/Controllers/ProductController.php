@@ -7,6 +7,19 @@ use App\Product;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('permission:products.create')->only(['create','store']);
+
+        $this->middleware('permission:products.index')->only('index'); 
+            
+        $this->middleware('permission:products.show')->only(['show']); 
+
+        $this->middleware('permission:products.destroy')->only(['destroy']); 
+
+        $this->middleware('permission:products.edit')->only(['edit','update']); 
+    }
     /**
      * Display a listing of the resource.
      *
