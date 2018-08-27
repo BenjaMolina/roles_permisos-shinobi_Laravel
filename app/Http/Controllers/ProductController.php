@@ -50,6 +50,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name' =>'required',
+            'description' => 'required'
+        ]);
+
         $product = Product::create($request->all());
 
         return redirect()->route('products.edit',$product->id)
@@ -87,6 +92,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $this->validate($request,[
+            'name' =>'required',
+            'description' => 'required'
+        ]);
+        
         $product->update($request->all());
 
         return redirect()->route('products.edit',$product->id)

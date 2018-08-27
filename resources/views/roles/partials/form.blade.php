@@ -1,14 +1,20 @@
-<div class="form-group">
+<div class="form-group  {{ $errors->first('name') ? 'has-error' : '' }}">
     {{ Form::label('name', 'Nombre') }}
     {{ Form::text('name',$value=null, ['class'=>'form-control']) }}
+
+    {!! $errors->first('name','<span class="control-label">:message</span>') !!}
 </div>
-<div class="form-group">
+<div class="form-group  {{ $errors->first('slug') ? 'has-error' : '' }}">
     {{ Form::label('slug', 'URL amigable') }}
     {{ Form::text('slug',$value=null, ['class'=>'form-control']) }}
+
+    {!! $errors->first('slug','<span class="control-label">:message</span>') !!}
 </div>
-<div class="form-group">
+<div class="form-group {{ $errors->first('description') ? 'has-error' : '' }}">
     {{ Form::label('description', 'Descripcion') }}
     {{ Form::textarea('description',$value=null, ['class'=>'form-control']) }}
+
+    {!! $errors->first('description','<span class="control-label">:message</span>') !!}
 </div>
 
 <hr>
